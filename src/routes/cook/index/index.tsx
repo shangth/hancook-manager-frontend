@@ -1,13 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, redirect } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/cook/index/')({
-  component: IngredientsComponent,
+  beforeLoad: () => {
+    throw redirect({
+      to: '/cook/ingredientsType',
+    });
+  },
 });
-
-function IngredientsComponent() {
-  return (
-    <div className="p-2">
-      <h3>Ingredients</h3>
-    </div>
-  );
-}
