@@ -1,38 +1,31 @@
 {
-    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-    "organizeImports": {
-        "enabled": true
-    },
-    "linter": {
-        "enabled": true,
-        "rules": {
-            "recommended": true,
-            "correctness": {
-                "useExhaustiveDependencies": "warn"
-            },
-            "suspicious": {
-                "noExplicitAny": "warn"
-            }
-        }
-    },
-    "formatter": {
-        "enabled": true,
-        "indentStyle": "space",
-        "indentWidth": 4,
-        "lineWidth": 100
-    },
-    "javascript": {
-        "formatter": {
-            "quoteStyle": "single",
-            "trailingCommas": "es5"
-        }
-    },
-    "files": {
-        "ignore": [
-            "dist/**",
-            "node_modules/**",
-            "*.config.js",
-            "*.config.ts"
-        ]
+  "$schema": "https://biomejs.dev/schemas/2.3.2/schema.json",
+
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "correctness": {
+        "useExhaustiveDependencies": "warn"
+      },
+      "suspicious": {
+        "noExplicitAny": "warn"
+      }
     }
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": ["**/src/**", "!**/*.gen.ts"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "lineWidth": 100,
+    "lineEnding": "auto"
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  }
 }
